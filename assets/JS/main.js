@@ -213,13 +213,15 @@ var typed = new Typed('.dashtext', {
 // Event animasi rubber band dan bouncing text
 const elements = document.getElementsByClassName('alpha');
 
-for (let i = 0; i<=elements.length; i++)
+for (let i = 0; i <= elements.length; i++)
 {
-    elements[i].addEventListener('animationend',function(){
-        elements[i].classList.remove('animated');
-    });
-
-    elements[i].addEventListener('mouseover',function(){
-        elements[i].classList.add('animated')
-    })
+    if (elements[i] != undefined) {
+        elements[i].addEventListener('animationend', function(){
+            elements[i].classList.remove('animated');
+        });
+    
+        elements[i].addEventListener('mouseover', function(){
+            elements[i].classList.add('animated')
+        })
+    }
 }
